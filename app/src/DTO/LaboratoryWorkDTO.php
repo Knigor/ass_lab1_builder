@@ -19,12 +19,14 @@ class LaboratoryWorkDTO
     private string $teacherName;
     private string $typeTeacher;
     private string $task;
-    private string $work;
+    private string $textAnnotation;
+    private array $listConents;
+    private string $maintext;
     private string $conclusion;
     private array $listOfSources;
     
 
-    public function __construct(string $nameUniversity, string $nameInstitute, string $nameCafedra, string $nameWork, string $studentName, string $groupName, string $teacherName, string $typeTeacher, string $task, string $work, string $conclusion, array $listOfSources)
+    public function __construct(string $nameUniversity, string $nameInstitute, string $nameCafedra, string $nameWork, string $studentName, string $groupName, string $teacherName, string $typeTeacher, string $task, string $textAnnotation, array $listConents, string $maintext, string $conclusion, array $listOfSources)
     {
         $this->nameUniversity = $nameUniversity;
         $this->nameInstitute = $nameInstitute;
@@ -35,9 +37,11 @@ class LaboratoryWorkDTO
         $this->teacherName = $teacherName;
         $this->typeTeacher = $typeTeacher;
         $this->task = $task;
-        $this->work = $work;
+        $this->maintext = $maintext;
         $this->conclusion = $conclusion;
         $this->listOfSources = $listOfSources;
+        $this->textAnnotation = $textAnnotation;
+        $this->listConents = $listConents;
     }
 
     public function getNameUniversity(): string
@@ -85,9 +89,9 @@ class LaboratoryWorkDTO
         return $this->task;
     }
 
-    public function getWork(): string
+    public function getMainText(): string
     {
-        return $this->work;
+        return $this->maintext;
     }
 
     public function getConclusion(): string
@@ -99,6 +103,17 @@ class LaboratoryWorkDTO
     {
         return $this->listOfSources;
     }
+
+    public function getTextAnnotation(): string    
+    {
+        return $this->textAnnotation;
+    }
+
+    public function getListConents(): array    
+    {
+        return $this->listConents;
+    }
+
 }
 
 

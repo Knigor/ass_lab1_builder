@@ -1,11 +1,11 @@
 <?php
 
-// src/Service/CourseWorkReportBuilder.php
-// **ConcreteBuilder** — для курсовых работ, реализует детали построения отчета для курсовых работ
+// **ConcreteBuilder** — для лабораторных работ, реализует детали построения отчета для лабораторных работ
 
+// src/Service/LaboratoryWorkReportBuilder.php
 namespace App\Service;
 
-class CourseWorkReportBuilder extends ReportBuilder 
+class ReferatWorkReportBuilder extends ReportBuilder 
 {
     // Построение титульной страницы
     public function buildTitlePage($nameUniversity, $nameInstitute, $nameCafedra, $nameWork, $studentName, $groupName, $teacherName, $typeTeacher) 
@@ -59,27 +59,27 @@ class CourseWorkReportBuilder extends ReportBuilder
         $this->report .= '</style>';
         $this->report .= '</head>';
         $this->report .= '<body>';
-        $this->report .= '<div class="container">';
-        $this->report .= '<h1>' . htmlspecialchars($nameUniversity) . '</h1>';
-        $this->report .= '<h1>' . htmlspecialchars($nameInstitute) . '</h1>';
-        $this->report .= '<h1>' . htmlspecialchars($nameCafedra) . '</h1>';
-        $this->report .= '<div class="section">';
-        $this->report .= '<h1>' . htmlspecialchars($nameWork) . '</h1>';
-        $this->report .= '<p>по дисциплине "Архитектура программных систем"</p>';
-        $this->report .= '</div>';
-        $this->report .= '<div class="student-info">';
-        $this->report .= '<p>Студент:</p>';
-        $this->report .= '<p>' . htmlspecialchars($studentName) . '</p>';
-        $this->report .= '<p>Группа: ' . htmlspecialchars($groupName) . '</p>';
-        $this->report .= '</div>';
-        $this->report .= '<div class="teacher-info">';
-        $this->report .= '<p>Руководитель:</p>';
-        $this->report .= '<p>' . htmlspecialchars($typeTeacher) . ' ' . htmlspecialchars($teacherName) . '</p>';
-        $this->report .= '</div>';
-        $this->report .= '<div class="signature">';
-        $this->report .= '<p>Липецк 2024 г.</p>';
-        $this->report .= '</div>';
-        $this->report .= '</div>';
+        // $this->report .= '<div class="container">';
+        // $this->report .= '<h1>' . htmlspecialchars($nameUniversity) . '</h1>';
+        // $this->report .= '<h1>' . htmlspecialchars($nameInstitute) . '</h1>';
+        // $this->report .= '<h1>' . htmlspecialchars($nameCafedra) . '</h1>';
+        // $this->report .= '<div class="section">';
+        // $this->report .= '<h1>' . htmlspecialchars($nameWork) . '</h1>';
+        // $this->report .= '<p>по дисциплине "Архитектура программных систем"</p>';
+        // $this->report .= '</div>';
+        // $this->report .= '<div class="student-info">';
+        // $this->report .= '<p>Студент:</p>';
+        // $this->report .= '<p>' . htmlspecialchars($studentName) . '</p>';
+        // $this->report .= '<p>Группа: ' . htmlspecialchars($groupName) . '</p>';
+        // $this->report .= '</div>';
+        // $this->report .= '<div class="teacher-info">';
+        // $this->report .= '<p>Руководитель:</p>';
+        // $this->report .= '<p>' . htmlspecialchars($typeTeacher) . ' ' . htmlspecialchars($teacherName) . '</p>';
+        // $this->report .= '</div>';
+        // $this->report .= '<div class="signature">';
+        // $this->report .= '<p>Липецк 2025 г.</p>';
+        // $this->report .= '</div>';
+        // $this->report .= '</div>';
     }
 
     // Задание кафедры
@@ -94,23 +94,23 @@ class CourseWorkReportBuilder extends ReportBuilder
     // Аннотация
     public function buildAnnotation($textAnnotation)
     {
-        $this->report .= '<div class="section">';
-        $this->report .= '<h2>Аннотация</h2>';
-        $this->report .= '<p>' . htmlspecialchars($textAnnotation) . '</p>';
-        $this->report .= '</div>';
+        // $this->report .= '<div class="section">';
+        // $this->report .= '<h2>Аннотация</h2>';
+        // $this->report .= '<p>' . htmlspecialchars($textAnnotation) . '</p>';
+        // $this->report .= '</div>';
     }
 
     // Оглавление
     public function buildContents($listContents)
     {
-        $this->report .= '<div class="section contents">';
-        $this->report .= '<h2>Оглавление</h2>';
-        $this->report .= '<ul>';
-        foreach ($listContents as $content) {
-            $this->report .= '<li>' . htmlspecialchars($content) . '</li>';
-        }
-        $this->report .= '</ul>';
-        $this->report .= '</div>';
+        // $this->report .= '<div class="section contents">';
+        // $this->report .= '<h2>Оглавление</h2>';
+        // $this->report .= '<ul>';
+        // foreach ($listContents as $content) {
+        //     $this->report .= '<li>' . htmlspecialchars($content) . '</li>';
+        // }
+        // $this->report .= '</ul>';
+        // $this->report .= '</div>';
     }
 
     // Основная часть
@@ -125,10 +125,10 @@ class CourseWorkReportBuilder extends ReportBuilder
     // Заключение
     public function buildConclusion($conclusion)
     {
-        $this->report .= '<div class="section">';
-        $this->report .= '<h2>Абоба</h2>';
-        $this->report .= '<p>' . htmlspecialchars($conclusion) . '</p>';
-        $this->report .= '</div>';
+        // $this->report .= '<div class="section">';
+        // $this->report .= '<h2>Заключение</h2>';
+        // $this->report .= '<p>' . htmlspecialchars($conclusion) . '</p>';
+        // $this->report .= '</div>';
     }
 
     // Закрытие HTML
@@ -138,6 +138,7 @@ class CourseWorkReportBuilder extends ReportBuilder
         $this->report .= '</html>';
     }
 }
+
 
 
 ?>

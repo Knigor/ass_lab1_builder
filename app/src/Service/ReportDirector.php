@@ -14,11 +14,15 @@ class ReportDirector
         $this->builder = $builder;
     }
 
-    public function constructReport($title, $department, $content, $sources)
+    public function constructReport($nameUniversity, $nameInstitute, $nameCafedra,$nameWork,$studentName,$groupName,$teacherName,$typeTeacher, $task, $textAnnotation, $listConents, $maintext, $conclusion)
     {
-        $this->builder->buildTitlePage($title, $department);
-        $this->builder->buildMainContent($content);
-        $this->builder->buildSources($sources);
+        $this->builder->buildTitlePage($nameUniversity, $nameInstitute, $nameCafedra,$nameWork,$studentName,$groupName,$teacherName,$typeTeacher);
+        $this->builder->buildTaskCafedra($task);
+        $this->builder->buildAnnotation($textAnnotation);
+        $this->builder->buildContents($listConents);
+        $this->builder->buildMainPart($maintext);
+        $this->builder->buildConclusion($conclusion);
+
     }
 }
 
