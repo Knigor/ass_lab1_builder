@@ -3,7 +3,7 @@
 // src/DTO/LaboratoryWorkDTO.php
 
 
-// Product для лабораторных работ
+// Product для всего
 
 
 namespace App\DTO;
